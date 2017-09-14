@@ -1,0 +1,12 @@
+{
+  "name" : "enumit/bambora",
+  "require": {
+    "php": ">=5.4",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "enumit\\Bambora\\": ["src/"]
+    }
+  }
+}
