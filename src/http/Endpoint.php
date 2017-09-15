@@ -10,12 +10,16 @@ class Endpoint
     protected $profileUrl;
     protected $tokenizationUrl;
 
+    protected $reportingUrl;
+
     protected $makePaymentMethod = 'POST';
     protected $returnPaymentMethod = 'POST';
     protected $voidTransactionMethod = 'POST';
     protected $completePreAuthMethod = 'POST';
     protected $paymentMethod = 'GET';
     protected $continuePaymentMethod = 'POST';
+
+    protected $reportingMethod = 'POST';
 
     public function __construct($version)
     {
@@ -55,6 +59,11 @@ class Endpoint
         return $this->paymentUrl . '/' . $merchantData . '/continue';
     }
 
+    public function getReportingUrl()
+    {
+        return $this->reportUrl;
+    }
+
     public function getMakePaymentMethod()
     {
         return $this->makePaymentMethod;
@@ -83,6 +92,11 @@ class Endpoint
     public function getContinuePaymentMethod()
     {
         return $this->continuePaymentMethod;
+    }
+
+    public function getReportingMethod()
+    {
+        return $this->reportingMethod;
     }
 }
 
