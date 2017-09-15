@@ -1,4 +1,4 @@
-#Bambora SDK for API v1.0.4
+# Bambora SDK for API v1.0.4
 
 Features:
 * Payment
