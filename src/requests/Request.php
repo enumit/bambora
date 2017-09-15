@@ -1,8 +1,8 @@
 <?php
 namespace enumit\Bambora\requests;
 
-use enumit\Bambora\Endpoint;
-use enumit\Bambora\HttpConnector;
+use enumit\Bambora\http\Endpoint;
+use enumit\Bambora\http\HttpConnector;
 
 class Request
 {

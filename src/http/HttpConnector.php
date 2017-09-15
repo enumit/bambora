@@ -1,5 +1,5 @@
 <?php
-namespace enumit\Bambora;
+namespace enumit\Bambora\http;
 
 class HttpConnector
 {
