@@ -2,7 +2,7 @@
   "name" : "enumit/bambora",
   "description" : "Bambora SDK for API v1.0.4",
   "version" : "1.0.0",
-  "keywords" : "bambora",
+  "keywords" : ["Bambora", "payment", "API"],
   "license" : "MIT",
   "authors" : [
     {
