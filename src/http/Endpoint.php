@@ -52,7 +52,7 @@ class Endpoint
 
     public function getContinuePaymentUrl($merchantData)
     {
-        return $this->paymentMethod . '/' . $merchantData . '/continue';
+        return $this->paymentUrl . '/' . $merchantData . '/continue';
     }
 
     public function getMakePaymentMethod()
