@@ -1,5 +1,15 @@
 {
   "name" : "enumit/bambora",
+  "description" : "Bambora SDK for API v1.0.4",
+  "version" : "1.0.0",
+  "keywords" : "bambora",
+  "license" : "MIT",
+  "authors" : [
+    {
+      "name" : "Wei Deng",
+      "role" : "Developer",
+    }
+  ],
   "require": {
     "php": ">=5.4",
     "ext-curl": "*"
