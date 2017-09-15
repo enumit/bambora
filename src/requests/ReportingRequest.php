@@ -16,8 +16,8 @@ class ReportingRequest extends Request
      */
     public function getReports($searchQuery)
     {
-        return $this->setUrl($this->endpoint->getReportingUrl())
-            ->setMethod($this->endpoint->getReportingMethod())
+        return $this->setUrl($this->endpoint->getSearchQueryUrl())
+            ->setMethod($this->endpoint->getSearchQueryMethod())
             ->setRequestData($searchQuery)
             ->sendData();
     }

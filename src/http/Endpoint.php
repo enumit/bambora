@@ -10,8 +10,6 @@ class Endpoint
     protected $profileUrl;
     protected $tokenizationUrl;
 
-    protected $reportingUrl;
-
     protected $makePaymentMethod = 'POST';
     protected $returnPaymentMethod = 'POST';
     protected $voidTransactionMethod = 'POST';
@@ -19,7 +17,19 @@ class Endpoint
     protected $paymentMethod = 'GET';
     protected $continuePaymentMethod = 'POST';
 
-    protected $reportingMethod = 'POST';
+    protected $searchQueryMethod = 'POST';
+
+    protected $createProfileMethod = 'POST';
+    protected $getProfileMethod = 'GET';
+    protected $updateProfileMethod = 'PUT';
+    protected $deleteProfileMethod = 'DELETE';
+    protected $getCardsMethod = 'GET';
+    protected $addCardMethod = 'POST';
+    protected $getCardMethod = 'GET';
+    protected $updateCardMethod = 'PUT';
+    protected $deleteCardMethod = 'DELETE';
+
+    protected $tokenizationMethod = 'POST';
 
     public function __construct($version)
     {
@@ -59,9 +69,59 @@ class Endpoint
         return $this->paymentUrl . '/' . $merchantData . '/continue';
     }
 
-    public function getReportingUrl()
+    public function getSearchQueryUrl()
     {
         return $this->reportUrl;
+    }
+
+    public function getCreateProfileUrl()
+    {
+        return $this->profileUrl;
+    }
+
+    public function getProfileUrl($profileId)
+    {
+        return $this->profileUrl . '/' . $profileId;
+    }
+
+    public function getUpdateProfileUrl($profileId)
+    {
+        return $this->profileUrl . '/' . $profileId;
+    }
+
+    public function getDeleteProfileUrl($profileId)
+    {
+        return $this->profileUrl . '/' . $profileId;
+    }
+
+    public function getCardsUrl($profileId)
+    {
+        return $this->profileUrl . '/' . $profileId . '/cards';
+    }
+
+    public function getAddCardUrl($profileId)
+    {
+        return $this->profileUrl . '/' . $profileId . '/cards';
+    }
+
+    public function getCardUrl($profileId, $cardId)
+    {
+        return $this->profileUrl . '/' . $profileId . '/cards/' . $cardId;
+    }
+
+    public function getUpdateCardUrl($profileId, $cardId)
+    {
+        return $this->profileUrl . '/' . $profileId . '/cards/' . $cardId;
+    }
+
+    public function getDeleteCardUrl($profileId, $cardId)
+    {
+        return $this->profileUrl . '/' . $profileId . '/cards/' . $cardId;
+    }
+
+    public function getTokenizationUrl()
+    {
+        return $this->tokenizationUrl;
     }
 
     public function getMakePaymentMethod()
@@ -94,9 +154,59 @@ class Endpoint
         return $this->continuePaymentMethod;
     }
 
-    public function getReportingMethod()
+    public function getSearchQueryMethod()
     {
-        return $this->reportingMethod;
+        return $this->searchQueryMethod;
+    }
+
+    public function getCreateProfileMethod()
+    {
+        return $this->createProfileMethod;
+    }
+
+    public function getProfileMethod()
+    {
+        return $this->getProfileMethod;
+    }
+
+    public function getUpdateProfileMethod()
+    {
+        return $this->updateProfileMethod;
+    }
+
+    public function getDeleteProfileMethod()
+    {
+        return $this->deleteProfileMethod;
+    }
+
+    public function getCardsMethod()
+    {
+        return $this->getCardsMethod;
+    }
+
+    public function getAddCardMethod()
+    {
+        return $this->addCardMethod;
+    }
+
+    public function getCardMethod()
+    {
+        return $this->getCardMethod;
+    }
+
+    public function getUpdateCardMethod()
+    {
+        return $this->updateCardMethod;
+    }
+
+    public function getDeleteCardMethod()
+    {
+        return $this->deleteCardMethod;
+    }
+
+    public function getTokenizationMethod()
+    {
+        return $this->tokenizationMethod;
     }
 }
 
