@@ -6,21 +6,20 @@ use enumit\Bambora\HttpConnector;
 
 class Request
 {
-
     protected $url;
     protected $method;
     protected $requestData;
     protected $endpoint;
     private $header;
 
-    public function __construct($merchantId, $passcode)
+    public function __construct($merchantId, $passcode, $version)
     {
         $this->header = [
             'Authorization: Passcode '.base64_encode($merchantId.':'.$passcode),
             'Content-Type: application/json',
         ];
 
-        $this->endpoint = new Endpoint();
+        $this->endpoint = new Endpoint($version);
     }
 
     public function setUrl($url)

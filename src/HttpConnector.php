@@ -11,8 +11,8 @@ class HttpConnector
         curl_setopt($req, CURLOPT_TIMEOUT, $timeout);
 
         curl_setopt($req, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($req, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($req, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($req, CURLOPT_SSL_VERIFYPEER, 1);
+        curl_setopt($req, CURLOPT_SSL_VERIFYHOST, 2);
 
         if(!empty($header)) {
             curl_setopt($req, CURLOPT_HTTPHEADER, $header);

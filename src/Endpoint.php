@@ -15,13 +15,14 @@ class Endpoint
     protected $voidTransactionMethod = 'POST';
     protected $completePreAuthMethod = 'POST';
     protected $paymentMethod = 'GET';
+    protected $continuePaymentMethod = 'POST';
 
-    public function __construct($version = 'v1')
+    public function __construct($version)
     {
         $this->paymentUrl = self::BASE_URL . $version . '/payments';
         $this->reportUrl = self::BASE_URL . $version . '/reports';
         $this->profileUrl = self::BASE_URL . $version . '/profiles';
-        $this->tokenizationUrl = self::BASE_URL . $version . '/scripts/tokenization/tokens';
+        $this->tokenizationUrl = self::BASE_URL . 'scripts/tokenization/tokens';
     }
 
     public function getMakePaymentUrl()
@@ -49,6 +50,11 @@ class Endpoint
         return $this->paymentUrl . '/' . $transId;
     }
 
+    public function getContinuePaymentUrl($merchantData)
+    {
+        return $this->paymentMethod . '/' . $merchantData . '/continue';
+    }
+
     public function getMakePaymentMethod()
     {
         return $this->makePaymentMethod;
@@ -72,6 +78,11 @@ class Endpoint
     public function getPaymentMethod()
     {
         return $this->paymentMethod;
+    }
+
+    public function getContinuePaymentMethod()
+    {
+        return $this->continuePaymentMethod;
     }
 }
 
